@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AlomaGoIndonesia</string>
+    <string name="transfer_pulsa">Transfer Pulsa</string>
+    <string name="nomor">Masukkan Nomor Tujuan</string>
+    <string name="denominasi">Pilih Denominasi</string>
+    <string name="totalpulsa">Total Pulsa yang akan di Transfer</string>
+    <string name="title_activity_main_tab">Aloma Go</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_onboarding">Onboarding</string>
+    <string name="slide1">Transfer Pulsa Antar Operator</string>
+    <string name="slide1_desc">Pilih denominasi yang mau kamu bagi, kami akan menambahkan jasa transfer pulsa kami dan transfer pulsa bisasegera kamu rasakan kemudahannya</string>
+    <string name="slide2">Konversi Pulsa ke Saldo Rekening</string>
+    <string name="slide2_desc">Pilih denominasi yang kamu konversi, masukkan rekening tujuan kamu, setelah ditambah jasa transfer kami, pulsa otomatis menjadi saldo rekening kamu </string>
+    <string name="slide3">Warung Pulsa Kamu</string>
+    <string name="slide3_desc">Kamu juga bisa mendaftar sebagai agen pulsa dan siap menambah penghasilan kamu dan membantu mencerahkan harimu</string>
+    <string name="slide4">Cerita Burung</string>
+    <string name="slide4_desc">Update berita di sekitar dengan kongkow di cerita burung sambil menikmati asiknya menikmati berita dalam format komik </string>
+    <string name="label_button_cta_canteen_intro" translatable="false">Lanjutkan</string>
+</resources>
