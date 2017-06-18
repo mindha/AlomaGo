@@ -46,7 +46,7 @@ public class KabarAdapter extends ArrayAdapter<KabarModel> {
             LayoutInflater inflater = LayoutInflater.from(mContext);
             convertView = inflater.inflate(R.layout.item_berita, parent, false);
             viewHolder.itemBerita= (LinearLayout) convertView.findViewById(R.id.itemBerita);
-            viewHolder.photo_thumbnail = (ImageView) convertView.findViewById(R.id.photo_thumbnail);
+            viewHolder.photo_thumbnail = (ImageView) convertView.findViewById(R.id.imagenews);
             viewHolder.itemJudul= (TextView) convertView.findViewById(R.id.judul_berita);
             viewHolder.txtTanggal = (TextView) convertView.findViewById(R.id.tgl_berita);
 
@@ -60,14 +60,16 @@ public class KabarAdapter extends ArrayAdapter<KabarModel> {
         lastPosition = position;
 
         viewHolder.itemBerita.setVisibility(View.VISIBLE);
-        viewHolder.itemJudul.setText(dataModel.getJudul());
-        viewHolder.txtTanggal.setText(dataModel.getDate());
-
         Glide.with(mContext)
                 .load(dataModel.getPhoto())
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .skipMemoryCache(false)
                 .into(viewHolder.photo_thumbnail);
+
+        viewHolder.itemJudul.setText(dataModel.getJudul());
+        viewHolder.txtTanggal.setText(dataModel.getDate());
+
+
 
         return convertView;
     }

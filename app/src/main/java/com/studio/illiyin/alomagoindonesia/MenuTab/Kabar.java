@@ -35,7 +35,8 @@ public class Kabar extends Fragment {
     public void dummyBerita(){
         dataModels = new ArrayList<>();
         for (int i=0;i<20;i++){
-            dataModels.add(new KabarModel(i, "https://unsplash.com/photos/lOqxtpaxZXQ", "Judul Berita "+i, "2017-02-02"));
+            String uri = "@drawable/icon_bird.png";
+            dataModels.add(new KabarModel(i, uri, "Judul Berita "+(i+1), "2017-02-02"));
         }
     }
 
