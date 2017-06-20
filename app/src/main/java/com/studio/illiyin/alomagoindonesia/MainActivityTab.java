@@ -1,6 +1,8 @@
 package com.studio.illiyin.alomagoindonesia;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -14,6 +16,15 @@ import android.view.MenuItem;
 
 import com.studio.illiyin.alomagoindonesia.MenuTab.Kabar;
 import com.studio.illiyin.alomagoindonesia.MenuTab.TransferPulsa;
+import com.studio.illiyin.alomagoindonesia.fragment.About;
+import com.studio.illiyin.alomagoindonesia.fragment.Disclaimer;
+import com.studio.illiyin.alomagoindonesia.fragment.Feedback;
+import com.studio.illiyin.alomagoindonesia.fragment.FragmentSatu;
+import com.studio.illiyin.alomagoindonesia.fragment.History;
+import com.studio.illiyin.alomagoindonesia.fragment.PrivacyPolicy;
+import com.studio.illiyin.alomagoindonesia.fragment.Rate;
+import com.studio.illiyin.alomagoindonesia.fragment.Registration;
+import com.studio.illiyin.alomagoindonesia.fragment.TellFriend;
 
 public class MainActivityTab extends AppCompatActivity {
 
@@ -25,12 +36,12 @@ public class MainActivityTab extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+
 
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private ViewPager mViewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +50,13 @@ public class MainActivityTab extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(mViewPager);
+        FragmentSatu first = new FragmentSatu();
+        FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
+        fragment.replace(R.id.container, first);
+        fragment.commit();
 
 
     }
@@ -71,53 +79,60 @@ public class MainActivityTab extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }else if (id == R.id.sign_in){
+            Registration tab1 = new Registration();
+            changeFragment(tab1);
+            return true;
+        }else if (id == R.id.history){
+            History tab1 = new History();
+            changeFragment(tab1);
+            return true;
+        }else if (id == R.id.rate){
+            Rate tab1 = new Rate();
+            changeFragment(tab1);
+            return true;
+        }else if (id == R.id.tell_friend){
+            TellFriend tab1 = new TellFriend();
+            changeFragment(tab1);
+            return true;
+        }else if (id == R.id.feedback){
+            Feedback tab1 = new Feedback();
+            changeFragment(tab1);
+            return true;
+        }else if (id == R.id.disclaimer){
+            Disclaimer tab1 = new Disclaimer();
+            changeFragment(tab1);
+            return true;
+        }else if (id == R.id.privacy){
+            PrivacyPolicy tab1 = new PrivacyPolicy();
+            changeFragment(tab1);
+            return true;
+        }else if (id == R.id.about){
+            About tab1 = new About();
+            changeFragment(tab1);
+            return true;
+        }else if (id==R.id.home){
+            FragmentSatu first = new FragmentSatu();
+            FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
+            fragment.replace(R.id.container, first);
+            fragment.commit();
+            return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            switch (position) {
-                case 0:
-                    TransferPulsa tab1 = new TransferPulsa();
-                    return tab1;
-                case 1:
-                    Kabar tab2 = new Kabar();
-                    return tab2;
-                default:
-                    return null;
-            }
-        }
-
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return 2;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "Transfer Pulsa";
-                case 1:
-                    return "Kabar Burung";
-            }
-            return null;
-        }
+    public void changeFragment(Fragment fragments){
+        FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
+        fragment.replace(R.id.container, fragments);
+        fragment.commit();
     }
+
+
 }
