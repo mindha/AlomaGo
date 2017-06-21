@@ -1,25 +1,20 @@
 package com.studio.illiyin.alomagoindonesia.fragment;
 
-import android.app.ActionBar;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toolbar;
 
-import com.studio.illiyin.alomagoindonesia.MainActivityTab;
 import com.studio.illiyin.alomagoindonesia.MenuTab.Kabar;
+import com.studio.illiyin.alomagoindonesia.MenuTab.SignIn;
+import com.studio.illiyin.alomagoindonesia.MenuTab.SignUp;
 import com.studio.illiyin.alomagoindonesia.MenuTab.TransferPulsa;
 import com.studio.illiyin.alomagoindonesia.R;
 
@@ -27,7 +22,7 @@ import com.studio.illiyin.alomagoindonesia.R;
  * Created by Mindha on 19/06/2017.
  */
 
-public class FragmentSatu extends Fragment{
+public class FragmentDua extends Fragment{
     View v;
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
@@ -35,7 +30,7 @@ public class FragmentSatu extends Fragment{
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_satu, container, false);
+        v = inflater.inflate(R.layout.fragment_dua, container, false);
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getActivity().getSupportFragmentManager());
 
@@ -59,10 +54,10 @@ public class FragmentSatu extends Fragment{
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    TransferPulsa tab1 = new TransferPulsa();
+                    SignIn tab1 = new SignIn();
                     return tab1;
                 case 1:
-                    Kabar tab2 = new Kabar();
+                    SignUp tab2 = new SignUp();
                     return tab2;
                 default:
                     return null;
@@ -79,9 +74,9 @@ public class FragmentSatu extends Fragment{
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Transfer Pulsa";
+                    return "Sign In";
                 case 1:
-                    return "Kabar Burung";
+                    return "Sign Up";
             }
             return null;
         }

@@ -19,6 +19,7 @@ import com.studio.illiyin.alomagoindonesia.MenuTab.TransferPulsa;
 import com.studio.illiyin.alomagoindonesia.fragment.About;
 import com.studio.illiyin.alomagoindonesia.fragment.Disclaimer;
 import com.studio.illiyin.alomagoindonesia.fragment.Feedback;
+import com.studio.illiyin.alomagoindonesia.fragment.FragmentDua;
 import com.studio.illiyin.alomagoindonesia.fragment.FragmentSatu;
 import com.studio.illiyin.alomagoindonesia.fragment.History;
 import com.studio.illiyin.alomagoindonesia.fragment.PrivacyPolicy;
@@ -53,7 +54,7 @@ public class MainActivityTab extends AppCompatActivity {
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        FragmentSatu first = new FragmentSatu();
+        FragmentDua first = new FragmentDua();
         FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
         fragment.replace(R.id.container, first);
         fragment.commit();
@@ -77,9 +78,7 @@ public class MainActivityTab extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }else if (id == R.id.sign_in){
+         if (id == R.id.sign_in){
             Registration tab1 = new Registration();
             changeFragment(tab1);
             return true;
@@ -110,12 +109,6 @@ public class MainActivityTab extends AppCompatActivity {
         }else if (id == R.id.about){
             About tab1 = new About();
             changeFragment(tab1);
-            return true;
-        }else if (id==R.id.home){
-            FragmentSatu first = new FragmentSatu();
-            FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
-            fragment.replace(R.id.container, first);
-            fragment.commit();
             return true;
         }
 
