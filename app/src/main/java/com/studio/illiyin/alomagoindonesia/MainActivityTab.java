@@ -1,7 +1,12 @@
 package com.studio.illiyin.alomagoindonesia;
 
+import android.app.ActionBar;
+import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -20,7 +25,6 @@ import com.studio.illiyin.alomagoindonesia.fragment.FragmentSatu;
 import com.studio.illiyin.alomagoindonesia.fragment.History;
 import com.studio.illiyin.alomagoindonesia.fragment.PrivacyPolicy;
 import com.studio.illiyin.alomagoindonesia.fragment.Rate;
-import com.studio.illiyin.alomagoindonesia.fragment.Registration;
 import com.studio.illiyin.alomagoindonesia.fragment.TellFriend;
 
 public class MainActivityTab extends AppCompatActivity {
@@ -47,12 +51,18 @@ public class MainActivityTab extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+//        getActionBar().setDisplayHomeAsUpEnabled(fal);
+//        getActionBar().setHomeButtonEnabled(true);
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         Fragment first = new FragmentSatu();
         FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
         fragment.replace(R.id.container, first);
         fragment.commit();
+
     }
 
     @Override
@@ -63,12 +73,19 @@ public class MainActivityTab extends AppCompatActivity {
     }
 
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-         if (id == R.id.sign_in){
+        if (id==android.R.id.home) {
+            Fragment tab1 = new FragmentSatu();
+            changeFragment(tab1);
+            return true;
+        }
+
+        if (id == R.id.sign_in){
             Fragment tab1 = new FragmentDua();
             changeFragment(tab1);
             return true;

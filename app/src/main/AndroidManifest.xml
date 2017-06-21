@@ -14,18 +14,24 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivityTab"
-            android:label="@string/title_activity_main_tab"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"
             android:isScrollContainer="false"
-            >
+            android:label="@string/title_activity_main_tab"
+            android:parentActivityName=".MainActivityTab"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.SEARCH" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.studio.illiyin.alomagoindonesia.MainActivityTab"
+                />
+
         </activity>
-        <activity android:name=".Onboarding"></activity>
+        <activity android:name=".Onboarding" />
     </application>
 
 </manifest>

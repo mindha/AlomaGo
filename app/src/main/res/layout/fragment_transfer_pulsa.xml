@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:background="@color/Bg"
     android:layout_height="match_parent">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20dp">
             <LinearLayout
@@ -97,13 +99,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-
                 android:textColor="@color/colorForm"
                 android:background="@color/colorPrimary"
                 android:text="TRANSFER"/>
         </LinearLayout>
 
     </ScrollView>
+
+</LinearLayout>
 
 
 </RelativeLayout>
