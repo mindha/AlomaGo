@@ -2,15 +2,19 @@ package com.studio.illiyin.alomagoindonesia.fragment;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.studio.illiyin.alomagoindonesia.MenuTab.Kabar;
 import com.studio.illiyin.alomagoindonesia.MenuTab.SignIn;
@@ -27,12 +31,11 @@ public class FragmentDua extends Fragment{
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_dua, container, false);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getActivity().getSupportFragmentManager());
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) v.findViewById(R.id.containers);
@@ -63,7 +66,6 @@ public class FragmentDua extends Fragment{
                     return null;
             }
         }
-
         @Override
         public int getCount() {
             // Show 3 total pages.
@@ -81,4 +83,7 @@ public class FragmentDua extends Fragment{
             return null;
         }
     }
+
+
+
 }

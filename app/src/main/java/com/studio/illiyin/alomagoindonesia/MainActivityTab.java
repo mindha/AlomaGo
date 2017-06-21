@@ -1,21 +1,17 @@
 package com.studio.illiyin.alomagoindonesia;
 
-import android.content.Intent;
-import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.studio.illiyin.alomagoindonesia.MenuTab.Kabar;
-import com.studio.illiyin.alomagoindonesia.MenuTab.TransferPulsa;
 import com.studio.illiyin.alomagoindonesia.fragment.About;
 import com.studio.illiyin.alomagoindonesia.fragment.Disclaimer;
 import com.studio.illiyin.alomagoindonesia.fragment.Feedback;
@@ -38,7 +34,6 @@ public class MainActivityTab extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
 
-
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -54,14 +49,11 @@ public class MainActivityTab extends AppCompatActivity {
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        FragmentDua first = new FragmentDua();
+        Fragment first = new FragmentSatu();
         FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
         fragment.replace(R.id.container, first);
         fragment.commit();
-
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -70,44 +62,42 @@ public class MainActivityTab extends AppCompatActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
          if (id == R.id.sign_in){
-            Registration tab1 = new Registration();
+            Fragment tab1 = new FragmentDua();
             changeFragment(tab1);
             return true;
         }else if (id == R.id.history){
-            History tab1 = new History();
+             Fragment tab1 = new History();
             changeFragment(tab1);
             return true;
         }else if (id == R.id.rate){
-            Rate tab1 = new Rate();
+            Fragment tab1 = new Rate();
             changeFragment(tab1);
             return true;
         }else if (id == R.id.tell_friend){
-            TellFriend tab1 = new TellFriend();
+            Fragment tab1 = new TellFriend();
             changeFragment(tab1);
             return true;
         }else if (id == R.id.feedback){
-            Feedback tab1 = new Feedback();
+            Fragment tab1 = new Feedback();
             changeFragment(tab1);
             return true;
         }else if (id == R.id.disclaimer){
-            Disclaimer tab1 = new Disclaimer();
+            Fragment tab1 = new Disclaimer();
             changeFragment(tab1);
             return true;
         }else if (id == R.id.privacy){
-            PrivacyPolicy tab1 = new PrivacyPolicy();
+            Fragment tab1 = new PrivacyPolicy();
             changeFragment(tab1);
             return true;
         }else if (id == R.id.about){
-            About tab1 = new About();
+            Fragment tab1 = new About();
             changeFragment(tab1);
             return true;
         }
@@ -116,16 +106,10 @@ public class MainActivityTab extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
-
     public void changeFragment(Fragment fragments){
         FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
         fragment.replace(R.id.container, fragments);
-        fragment.commit();
+        fragment.commitNow();
     }
-
 
 }
