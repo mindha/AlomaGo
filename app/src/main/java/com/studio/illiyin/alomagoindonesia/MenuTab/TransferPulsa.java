@@ -1,5 +1,6 @@
 package com.studio.illiyin.alomagoindonesia.MenuTab;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.studio.illiyin.alomagoindonesia.R;
@@ -24,6 +26,14 @@ public class TransferPulsa extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.fragment_transfer_pulsa,container,false);
         dropdownList(myView);
+
+//        ImageView lineColorCode = (ImageView)myView.findViewById(R.id.icon_transfer);
+        int color = Color.parseColor("#BDBDBD"); //The color u want
+//        lineColorCode.setColorFilter(color);
+
+        ImageView imageView = (ImageView) myView.findViewById(R.id.icon_transfer);
+        imageView.setColorFilter(color);
+
         return myView;
     }
 
@@ -50,6 +60,8 @@ public class TransferPulsa extends Fragment{
                 // TODO Auto-generated method stub
             }
         });
+
+
     }
 
 

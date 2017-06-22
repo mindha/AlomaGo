@@ -42,7 +42,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/abuLight"/>
+            android:src="@drawable/button"/>
 
     </LinearLayout>
 
@@ -76,20 +76,19 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-
-                android:background="@color/abuLight" />
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/abuLight" />
+                android:src="@drawable/facebook" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="20dp"
-                android:background="@color/abuLight" />
+                android:src="@drawable/twitter" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/googleplus" />
 
         </LinearLayout>
         <LinearLayout
@@ -104,19 +103,19 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:background="@color/abuLight" />
+                android:src="@drawable/line" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="20dp"
-                android:background="@color/abuLight" />
+                android:src="@drawable/whatsapp" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="20dp"
-                android:background="@color/abuLight" />
+                android:src="@drawable/sms" />
 
         </LinearLayout>
 
