@@ -20,7 +20,7 @@ public class Rate extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.fragment_rate,container,false);
-
+        getActivity().setTitle("Rate this App");
         return myView;
     }
 }

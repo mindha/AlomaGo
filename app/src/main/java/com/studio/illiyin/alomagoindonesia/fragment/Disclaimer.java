@@ -20,7 +20,7 @@ public class Disclaimer extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.fragment_disclaimer,container,false);
-
+        getActivity().setTitle("Disclaimer");
         return myView;
     }
 }

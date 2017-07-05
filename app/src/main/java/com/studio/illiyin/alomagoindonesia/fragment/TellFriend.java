@@ -19,7 +19,7 @@ public class TellFriend extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.fragment_tell_friend,container,false);
-
+        getActivity().setTitle("Tell a Friend");
         return myView;
     }
 }

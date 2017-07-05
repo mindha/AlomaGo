@@ -20,6 +20,7 @@ public class PrivacyPolicy extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.fragment_privacy_policy,container,false);
+        getActivity().setTitle("Privacy Policy");
 
         return myView;
     }

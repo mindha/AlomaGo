@@ -1,12 +1,6 @@
 package com.studio.illiyin.alomagoindonesia;
 
-import android.app.ActionBar;
-import android.content.Intent;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -20,8 +14,8 @@ import android.view.MenuItem;
 import com.studio.illiyin.alomagoindonesia.fragment.About;
 import com.studio.illiyin.alomagoindonesia.fragment.Disclaimer;
 import com.studio.illiyin.alomagoindonesia.fragment.Feedback;
-import com.studio.illiyin.alomagoindonesia.fragment.FragmentDua;
-import com.studio.illiyin.alomagoindonesia.fragment.FragmentSatu;
+import com.studio.illiyin.alomagoindonesia.fragment.Registration;
+import com.studio.illiyin.alomagoindonesia.fragment.Home;
 import com.studio.illiyin.alomagoindonesia.fragment.History;
 import com.studio.illiyin.alomagoindonesia.fragment.PrivacyPolicy;
 import com.studio.illiyin.alomagoindonesia.fragment.Rate;
@@ -58,7 +52,7 @@ public class MainActivityTab extends AppCompatActivity {
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        Fragment first = new FragmentSatu();
+        Fragment first = new Home();
         FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
         fragment.replace(R.id.container, first);
         fragment.commit();
@@ -80,13 +74,13 @@ public class MainActivityTab extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id==android.R.id.home) {
-            Fragment tab1 = new FragmentSatu();
+            Fragment tab1 = new Home();
             changeFragment(tab1);
             return true;
         }
 
         if (id == R.id.sign_in){
-            Fragment tab1 = new FragmentDua();
+            Fragment tab1 = new Registration();
             changeFragment(tab1);
             return true;
         }else if (id == R.id.history){
@@ -127,6 +121,10 @@ public class MainActivityTab extends AppCompatActivity {
         FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
         fragment.replace(R.id.container, fragments);
         fragment.commitNow();
+    }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
     }
 
 }
