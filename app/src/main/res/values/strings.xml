@@ -51,4 +51,20 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_main_tab_menu">MainActivityTabMenu</string>
 
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Transfer Pulsa Antar Operator</string>
+    <string name="slide_1_desc">Pilih denominasi yang mau kamu bagi, kami akan menambahkan jasa transfer pulsa kami dan transfer pulsa bisa segera kamu rasakan kemudahannya</string>
+
+    <string name="slide_2_title">Konversi Pulsa ke Saldo Rekening</string>
+    <string name="slide_2_desc">Pilih denominasi yang mau kamu konversi, masukkan rekening tujuan kamu, setelah ditambah jasa transfer kami, pulsa otomatis menjadi saldo di rekening kamu</string>
+
+    <string name="slide_3_title">Warung Pulsa Kamu</string>
+    <string name="slide_3_desc">Kamu juga bisa mendaftar sebagai agen pulsa dan siap menambah penghasilan kamu dan membantu mencerahkan harimu</string>
+
+    <string name="slide_4_title">Cerita Burung</string>
+    <string name="slide_4_desc">Update berita di sekitar dengan kongkow di cerita burung sambil menikmati asiknya menikmati berita dalam format komik</string>
+
 </resources>
