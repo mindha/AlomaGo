@@ -39,7 +39,7 @@ public class Home extends Fragment implements ActionBar.TabListener {
     private ViewPager mViewPager;
     private ActionBar actionBar;
     private TabLayout TabLayout;
-    private String[] tabs = { "Transfer Pulsa", "Berita Burung"};
+    private String[] tabs = { "Transfer Pulsa", "Berita Burung", "History"};
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -58,7 +58,8 @@ public class Home extends Fragment implements ActionBar.TabListener {
 
         final int[] ICONS = new int[]{
                 R.drawable.transfer,
-                R.drawable.burung
+                R.drawable.burung,
+                R.drawable.history
         };
 
         for (int i=0; i< tabs.length; i++) {
@@ -99,6 +100,9 @@ public class Home extends Fragment implements ActionBar.TabListener {
                 case 1:
                     Kabar tab2 = new Kabar();
                     return tab2;
+                case 2:
+                    History tab3 = new History();
+                    return tab3;
                 default:
                     return null;
             }
@@ -107,18 +111,18 @@ public class Home extends Fragment implements ActionBar.TabListener {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 2;
+            return 3;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            Drawable icon = null;
             switch (position) {
                 case 0:
-                    icon = getResources().getDrawable(R.drawable.transfer);
                     return "Transfer Pulsa";
                 case 1:
                     return "Kabar Burung";
+                case 2:
+                    return "History";
             }
             return null;
         }
